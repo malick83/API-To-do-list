@@ -2,6 +2,7 @@
 C'est le dépôt du font-end
 
 # Norme de travail
+* respecter le temps qui sera donné pour votre travail sur le Trello
 * utiliser des termes de nommage clair et explicite avec la syntaxe en camelCase;
 * chacun clone le dépôt;
 * ensuite crée sa propre branche pour la fonctionnalité qu'il travaille;
