@@ -1,8 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+
+
+
+
+
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
+
+body {
+    overflow-x: hidden;
+    font-family: 'Sen', sans-serif;
+
+}
+
+
 section {
     /* border: 3px solid hotpink; */
     /* width: 50%; */
@@ -25,8 +40,8 @@ section .premiere-carte {
     /* border: 3px solid blue; */
     width: 515px;
     max-width: 520px;
-    height: 269px;
-    max-height: 272px;
+    height: 278px;
+    max-height: 280px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
 }
@@ -41,6 +56,7 @@ section .premiere-carte {
      margin-right: 15px;
  }
 
+
 .entete-article::after {
     content: "";
     position: absolute;
@@ -51,9 +67,20 @@ section .premiere-carte {
     width: 100%;
 }
 
+/* section .premiere-carte .le-calendrier {
+    padding: 0px;
+} */
+
 section .premiere-carte .le-calendrier img {
-    margin-top: 5px;
-    width: 15.83px;
+    margin-top: 10px;
+    width: 17px;
+}
+
+section .premiere-carte .le-calendrier time {
+    line-height: 17px;
+    color: #555555;
+    margin: 0px 10px;
+
 }
 
 section .premiere-carte .etiquette {
@@ -80,6 +107,7 @@ textarea[name=article_content]
     margin-right: 20px;
     padding-left: 23px;
     padding-top: 18px;
+    font-family: 'Sen', sans-serif;
 }
 
 section .mon-titre{
@@ -92,6 +120,17 @@ section .mon-titre{
     margin-left: 20px;
     margin-right: 20px;
 }
+
+/* section .mon-titre h3 {
+    font-size: 18px;
+} */
+
+section .mon-titre span {
+    font-size: 18px;
+    color: #555555;
+    /* opacity: .3; */
+}
+
 section .footer-carte {
     display: flex;
     flex-direction: row;
@@ -100,14 +139,15 @@ section .footer-carte {
     padding: 3px;
     margin-left: 20px;
     margin-right: 20px;
+    /* margin-bottom: 32px; */
 }
 
 section .footer-carte .bouton-terminer {
-    height: 28px;
-    width: 100px;
+    height: 32px;
+    width: 115px;
     display: flex;
     flex-direction: row;
-    padding-top: 3px;
+    padding-top: 6px;
     background: rgba(255, 255, 255, 0.29);
     border: 1px solid rgba(168, 168, 168, 0.69);
     box-shadow: 0px 0px 4px rgba(176, 176, 176, 0.25);
@@ -121,8 +161,11 @@ section .footer-carte .bouton-terminer img {
     margin-top: 2px;
 }
 section .footer-carte .bouton-terminer p {
+    margin-left: 3px;
     margin-right: 8px;
+    margin-top: -4px;
     color: #A8A8A8;
+    font-size: 18px;
 }
 
 section .footer-carte .bouton-suppression {
