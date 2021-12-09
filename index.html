@@ -22,54 +22,54 @@
         </div>
     </nav>
     <section class="container-fluid mt-5">
-        <div class="row d-flex justify-content-around">
+        <div class="row ms-5 d-flex flex-row justify-content-center align-content-center">
             <div class="col-4 d-flex justify-content-center align-items-center">
-                <div class="search col-10"> 
+                <div class="search col-12"> 
                     <i class="fa fa-search text-danger"></i>
-                    <input type="text" class="form-control col-12" placeholder="Recherche par titre">
+                    <input type="text" class="form-control" placeholder="Recherche par titre">
                 </div>
             </div>
-            <div class="col-4">
-                <div class="search col-6 d-flex justify-content-center flex-column"> 
+            <div class="col-4 filtre">
+                <div class="search col-10 d-flex align-content-center"> 
                       <img src="images/setting.svg" class="img img-fluid fa-search" alt="">
                     <input type="text" class="form-control" placeholder="Filtrer">
                 </div>
             </div>
-            <div class="col-4">
-                <div class="search col-6"> 
-                    <img src="images/fileadd.svg" class="img img-fluid fa-search" alt="">
-                    <button type="button" class="form-control btn text color-red-simplon" data-bs-toggle="modal" data-bs-target="#myModal">Ajouter Tâche</button>
+            <div class="col-4 filtre">
+                <div class="search col-10"> 
+                    <i class="fas fa-file-medical text-white"></i>
+                    <button type="button" class="form-control btn text color-red-simplon " data-bs-toggle="modal" data-bs-target="#myModal">Ajouter Tâche</button>
                 </div>
                 <div class="modal" id="myModal">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header color-red-simplon text-white text">
+                            <div class="modal-header color-red-simplon text-white">
                                 <h5 class="modal-title">Ajouter Tache</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                             </div>
-                            <div class="modal-body">
+                            <div class="modal-body bg-light">
                                 <form action="">
-                                    <div class="m-3 search">
-                                        <label for="titre" class="form-label">Titre <span class="required">*</span></label>
+                                    <div class="m-3">
+                                        <label for="titre" class="form-label required">Titre</label>
                                         <input type="text" class="form-control">
                                     </div>
-                                    <div class="m-3 search">
+                                    <div class="m-3">
                                         <label for="description" class="form-label  required">Description</label>
                                         <textarea name="" id="" cols="30" rows="5" class="form-control"></textarea>
                                     </div>
-                                    <div class="m-3 search">
+                                    <div class="m-3">
                                         <label for="deadline" class="form-label required">Deadline</label>
                                         <input type="datetime-local" class="form-control">
                                     </div>
-                                    <div class="m-3 search">
-                                        <label for="etat" class="form-labelrequired">Etat</label>
+                                    <div class="m-3">
+                                        <label for="etat" class="form-label required">Etat</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="debuter">Débuter</option>
                                             <option value="encours">En cours</option>
                                             <option value="terminer">Terminer</option>
                                         </select>
                                     </div>
-                                    <div class="m-3  search">
+                                    <div class="m-3">
                                         <label for="Priorité" class="form-label required">Priorité</label>
                                         <select class="form-select" aria-label="Default select example">
                                             <option value="faible">Faible</option>
@@ -78,7 +78,7 @@
                                         </select>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn btn-danger">Ajouter</button>
+                                        <button type="submit" class="btn color-red-simplon text-white">Ajouter</button>
                                     </div>
                                     
                                 </form>
