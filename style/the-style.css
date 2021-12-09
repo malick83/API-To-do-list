@@ -28,6 +28,7 @@ section {
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f8f7f980;
+    border-radius: 10px;
 }
 section .mes-cartes {
     /* border: 3px solid red; */
@@ -159,13 +160,13 @@ section .footer-carte .bouton-terminer {
 section .footer-carte .bouton-terminer img {
     width: 15px;
     margin: auto;
-    margin-left: 4px;
+    margin-left: 10px;
     margin-top: 2px;
 }
 section .footer-carte .bouton-terminer p {
     margin-left: 3px;
     margin-right: 8px;
-    margin-top: -4px;
+    margin-top: -1px;
     color: #A8A8A8;
     font-size: 18px;
 }
@@ -207,3 +208,184 @@ section .footer-carte4 .bouton-terminer {
 
     border: 1px solid #00BD62;
 }
+
+/* RESPONSIVITÉ */
+
+
+
+
+
+@media screen and (min-width: 710px) and (max-width: 1150px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        max-width: 450px;
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 405px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 960px;
+        max-width: 970px;
+    }
+
+    
+
+    
+}
+
+
+@media screen and (min-width: 410px) and (max-width: 970px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 410px;
+        max-width: 420px;
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 365px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 860px;
+        /* max-width: 730px; */
+    }
+
+    
+}
+
+
+@media screen and (min-width: 410px) and (max-width: 855px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 310px;
+        /* max-width: 420px; */
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 265px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 660px;
+        /* max-width: 730px; */
+    }
+
+
+        section .mon-titre span {
+        font-size: 16px;
+        color: #555555;
+        /* opacity: .3; */
+    }
+
+    section .mon-titre h3 {
+        font-size: 16px;
+    }
+
+    section .premiere-carte .le-calendrier img {
+        margin-top: 10px;
+        width: 16px;
+    }
+    
+    section .premiere-carte .le-calendrier time {
+        line-height: 17px;
+        color: #555555;
+        margin: 0px 10px;
+        font-size: 13px;
+    
+    }
+
+    
+}
+
+
+
+@media screen and (min-width: 310px) and (max-width: 665px){
+
+    section .mes-cartes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* margin-bottom: 20px; */
+        margin: auto;
+        padding: 23px;
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 370px;
+        /* max-width: 730px; */
+    }
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 310px;
+        /* max-width: 420px; */
+        height: 278px;
+        margin-bottom: 23px;
+    }
+    section .mon-titre span {
+        font-size: 13px;
+        color: #555555;
+        /* opacity: .3; */
+    }
+
+    section .mon-titre h3 {
+        font-size: 13px;
+    }
+
+    section .premiere-carte .le-calendrier img {
+        margin-top: 10px;
+        width: 14px;
+    }
+    
+    section .premiere-carte .le-calendrier time {
+        line-height: 17px;
+        color: #555555;
+        margin: 0px 10px;
+        font-size: 12px;
+    
+    }
+}
+
+
+
+
