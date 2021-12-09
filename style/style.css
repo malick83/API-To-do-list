@@ -37,9 +37,11 @@ body {
     position: absolute;
     top: 20px;
     left: 16px
-    
 }
 
+i{
+    font-size: 30px;
+}
 .form-control::placeholder {
     
     font-size: 20px;
@@ -69,6 +71,6 @@ body {
     content: "*";
     color: red;
 }
-.filtre{
+.espace-entre-div-col-4{
     padding-left: 10%;
 }
