@@ -30,6 +30,14 @@ section {
     background-color: #f8f7f980;
     border-radius: 10px;
 }
+section h1 {
+    /* border: 3px solid springgreen; */
+    width: 145px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 section .mes-cartes {
     /* border: 3px solid red; */
     display: flex;
@@ -163,7 +171,7 @@ section .footer-carte .bouton-terminer img {
     margin-left: 10px;
     margin-top: 2px;
 }
-section .footer-carte .bouton-terminer p {
+section .footer-carte .bouton-terminer span {
     margin-left: 3px;
     margin-right: 8px;
     margin-top: -1px;
@@ -200,7 +208,7 @@ section #carte4{
     display: none;
 }
 
-section .footer-carte4 .bouton-terminer p {
+section .footer-carte4 .bouton-terminer span {
     color: #00BD62;
 }
 
@@ -383,6 +391,10 @@ section .footer-carte4 .bouton-terminer {
         margin: 0px 10px;
         font-size: 12px;
     
+    }
+
+    section h1 {
+        font-size: 22px;
     }
 }
 
