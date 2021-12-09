@@ -27,6 +27,7 @@ section {
     margin-top: 200px;
     padding-top: 20px;
     padding-bottom: 20px;
+    background-color: #f8f7f980;
 }
 section .mes-cartes {
     /* border: 3px solid red; */
@@ -44,6 +45,7 @@ section .premiere-carte {
     max-height: 280px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
+    background-color: white;
 }
  section .entete-article {
      position: relative;
@@ -180,4 +182,28 @@ section .footer-carte .bouton-suppression img {
     margin-left: 4px;
     margin-top: 4px;
 }
+/*DEBUT DE LA DEUXIÈME CARTE*/
 
+section .premiere-carte .etiquette2 {
+    background: #00BD62;
+}
+
+/* DEBUT DE LA TROISIÈME CARTE */
+section .premiere-carte .etiquette3 {
+    background: #40D0FD;
+}
+
+/* DEBUT DE LA QUATRIÈME CARTE */
+
+section #carte4{
+    display: none;
+}
+
+section .footer-carte4 .bouton-terminer p {
+    color: #00BD62;
+}
+
+section .footer-carte4 .bouton-terminer {
+
+    border: 1px solid #00BD62;
+}
