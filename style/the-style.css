@@ -1,0 +1,403 @@
+@import url('https://fonts.googleapis.com/css2?family=Sen&display=swap');
+
+
+
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow-x: hidden;
+    font-family: 'Sen', sans-serif;
+
+}
+
+
+section {
+    /* border: 3px solid hotpink; */
+    /* width: 50%; */
+    width: 1152px;
+    max-width: 1252px;
+    margin: auto;
+    margin-top: 200px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: #f8f7f980;
+    border-radius: 10px;
+}
+section h1 {
+    /* border: 3px solid springgreen; */
+    width: 145px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+section .mes-cartes {
+    /* border: 3px solid red; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 40px;
+}
+
+section .premiere-carte {
+    /* border: 3px solid blue; */
+    width: 515px;
+    max-width: 520px;
+    height: 278px;
+    max-height: 280px;
+    border: 1px solid rgba(216, 216, 216, 0.69);
+    border-radius: 10px;
+    background-color: white;
+}
+ section .entete-article {
+     position: relative;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     margin-top: 5px;
+     margin-bottom: 5px;
+     margin-left: 15px;
+     margin-right: 15px;
+ }
+
+
+.entete-article::after {
+    content: "";
+    position: absolute;
+    top: 39px;
+    background-color: #DEDEDE;
+    border-radius: 12px;
+    height: 2px;
+    width: 100%;
+}
+
+/* section .premiere-carte .le-calendrier {
+    padding: 0px;
+} */
+
+section .premiere-carte .le-calendrier img {
+    margin-top: 10px;
+    width: 17px;
+}
+
+section .premiere-carte .le-calendrier time {
+    line-height: 17px;
+    color: #555555;
+    margin: 0px 10px;
+
+}
+
+section .premiere-carte .etiquette {
+    width: 50px;
+    height: 24px;
+    border-radius: 5px;
+    background: #CE0033;
+    margin-top: 4px;
+}
+
+section .deuxieme-carte {
+    border: 3px solid springgreen;
+}
+
+textarea[name=article_content]
+{
+    border: 1px solid rgba(216, 216, 216, 0.69);
+    border-radius: 9px;
+    resize : none;    
+    width : 465px;
+    height : 118px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 23px;
+    padding-top: 18px;
+    font-family: 'Sen', sans-serif;
+}
+
+section .mon-titre{
+    /* border: 3px solid tomato; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+/* section .mon-titre h3 {
+    font-size: 18px;
+} */
+
+section .mon-titre span {
+    font-size: 18px;
+    color: #555555;
+    /* opacity: .3; */
+}
+
+section .footer-carte {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* border: 3px solid darkblue; */
+    padding: 3px;
+    margin-left: 20px;
+    margin-right: 20px;
+    /* margin-bottom: 32px; */
+}
+
+section .footer-carte .bouton-terminer {
+    height: 32px;
+    width: 115px;
+    display: flex;
+    flex-direction: row;
+    padding-top: 6px;
+    background: rgba(255, 255, 255, 0.29);
+    border: 1px solid rgba(168, 168, 168, 0.69);
+    box-shadow: 0px 0px 4px rgba(176, 176, 176, 0.25);
+    border-radius: 5px;
+}
+
+section .footer-carte .bouton-terminer img {
+    width: 15px;
+    margin: auto;
+    margin-left: 10px;
+    margin-top: 2px;
+}
+section .footer-carte .bouton-terminer span {
+    margin-left: 3px;
+    margin-right: 8px;
+    margin-top: -1px;
+    color: #A8A8A8;
+    font-size: 18px;
+}
+
+section .footer-carte .bouton-suppression {
+    background-color: white;
+    border: 1px solid #CE0033;
+    border-radius: 5px;
+}
+
+section .footer-carte .bouton-suppression img {
+    width: 20px;
+    margin: auto;
+    margin-left: 4px;
+    margin-top: 4px;
+}
+/*DEBUT DE LA DEUXIÈME CARTE*/
+
+section .premiere-carte .etiquette2 {
+    background: #00BD62;
+}
+
+/* DEBUT DE LA TROISIÈME CARTE */
+section .premiere-carte .etiquette3 {
+    background: #40D0FD;
+}
+
+/* DEBUT DE LA QUATRIÈME CARTE */
+
+section #carte4{
+    display: none;
+}
+
+section .footer-carte4 .bouton-terminer span {
+    color: #00BD62;
+}
+
+section .footer-carte4 .bouton-terminer {
+
+    border: 1px solid #00BD62;
+}
+
+/* RESPONSIVITÉ */
+
+
+
+
+
+@media screen and (min-width: 710px) and (max-width: 1150px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        max-width: 450px;
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 405px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 960px;
+        max-width: 970px;
+    }
+
+    
+
+    
+}
+
+
+@media screen and (min-width: 410px) and (max-width: 970px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 410px;
+        max-width: 420px;
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 365px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 860px;
+        /* max-width: 730px; */
+    }
+
+    
+}
+
+
+@media screen and (min-width: 410px) and (max-width: 855px){
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 310px;
+        /* max-width: 420px; */
+        height: 278px;
+    }
+    textarea[name=article_content] {  
+        width : 265px;
+
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 660px;
+        /* max-width: 730px; */
+    }
+
+
+        section .mon-titre span {
+        font-size: 16px;
+        color: #555555;
+        /* opacity: .3; */
+    }
+
+    section .mon-titre h3 {
+        font-size: 16px;
+    }
+
+    section .premiere-carte .le-calendrier img {
+        margin-top: 10px;
+        width: 16px;
+    }
+    
+    section .premiere-carte .le-calendrier time {
+        line-height: 17px;
+        color: #555555;
+        margin: 0px 10px;
+        font-size: 13px;
+    
+    }
+
+    
+}
+
+
+
+@media screen and (min-width: 310px) and (max-width: 665px){
+
+    section .mes-cartes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        /* margin-bottom: 20px; */
+        margin: auto;
+        padding: 23px;
+    }
+
+    section {
+        /* border: 3px solid slateblue; */
+        /* width: 50%; */
+        width: 370px;
+        /* max-width: 730px; */
+    }
+
+    section .premiere-carte {
+        /* border: 3px solid blue;
+        width: 515px;
+        max-height: 280px;
+        border: 1px solid rgba(216, 216, 216, 0.69);
+        border-radius: 10px;
+        background-color: white; */
+
+        width: 310px;
+        /* max-width: 420px; */
+        height: 278px;
+        margin-bottom: 23px;
+    }
+    section .mon-titre span {
+        font-size: 13px;
+        color: #555555;
+        /* opacity: .3; */
+    }
+
+    section .mon-titre h3 {
+        font-size: 13px;
+    }
+
+    section .premiere-carte .le-calendrier img {
+        margin-top: 10px;
+        width: 14px;
+    }
+    
+    section .premiere-carte .le-calendrier time {
+        line-height: 17px;
+        color: #555555;
+        margin: 0px 10px;
+        font-size: 12px;
+    
+    }
+
+    section h1 {
+        font-size: 22px;
+    }
+}
+
+
+
+
