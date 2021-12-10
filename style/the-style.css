@@ -36,6 +36,7 @@ section h1 {
     margin: auto;
     margin-top: 30px;
     margin-bottom: 30px;
+    font-size: 24px;
 }
 
 section .mes-cartes {
@@ -50,7 +51,7 @@ section .premiere-carte {
     /* border: 3px solid blue; */
     width: 515px;
     max-width: 520px;
-    height: 278px;
+    height: 285px;
     max-height: 280px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
@@ -150,6 +151,7 @@ section .footer-carte {
     padding: 3px;
     margin-left: 20px;
     margin-right: 20px;
+    margin-top: -3px;
     /* margin-bottom: 32px; */
 }
 
