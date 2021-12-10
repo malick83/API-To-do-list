@@ -24,7 +24,7 @@ section {
     width: 1152px;
     max-width: 1252px;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 100px;
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: #f8f7f980;
@@ -45,14 +45,16 @@ section .mes-cartes {
     flex-direction: row;
     justify-content: space-around;
     margin-bottom: 40px;
+    padding-top: 23px;
+    padding-bottom: 23px;
 }
 
 section .premiere-carte {
     /* border: 3px solid blue; */
     width: 515px;
     max-width: 520px;
-    height: 285px;
-    max-height: 280px;
+    height: 320px;
+    max-height: 350px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
     background-color: white;
@@ -79,19 +81,19 @@ section .premiere-carte {
     width: 100%;
 }
 
-/* section .premiere-carte .le-calendrier {
-    padding: 0px;
-} */
+section .premiere-carte .le-calendrier {
+    padding-top: 8px;
+}
 
 section .premiere-carte .le-calendrier img {
-    margin-top: 10px;
+    margin-top: -2px;
     width: 17px;
 }
 
 section .premiere-carte .le-calendrier time {
-    line-height: 17px;
+    /* line-height: 17px; */
     color: #555555;
-    margin: 0px 10px;
+    margin-left: 10px;
 
 }
 
@@ -100,11 +102,11 @@ section .premiere-carte .etiquette {
     height: 24px;
     border-radius: 5px;
     background: #CE0033;
-    margin-top: 4px;
+    margin-top: 6px;
 }
 
 section .deuxieme-carte {
-    border: 3px solid springgreen;
+    /* border: 3px solid springgreen; */
 }
 
 textarea[name=article_content]
@@ -114,7 +116,7 @@ textarea[name=article_content]
     resize : none;    
     width : 465px;
     height : 118px;
-    margin-bottom: 10px;
+    /* margin-bottom: 1px; */
     margin-left: 20px;
     margin-right: 20px;
     padding-left: 23px;
@@ -151,7 +153,7 @@ section .footer-carte {
     padding: 3px;
     margin-left: 20px;
     margin-right: 20px;
-    margin-top: -3px;
+    margin-top: 17px;
     /* margin-bottom: 32px; */
 }
 
@@ -176,7 +178,7 @@ section .footer-carte .bouton-terminer img {
 section .footer-carte .bouton-terminer span {
     margin-left: 3px;
     margin-right: 8px;
-    margin-top: -1px;
+    margin-top: -5px;
     color: #A8A8A8;
     font-size: 18px;
 }
@@ -191,7 +193,7 @@ section .footer-carte .bouton-suppression img {
     width: 20px;
     margin: auto;
     margin-left: 4px;
-    margin-top: 4px;
+    margin-top: -1px;
 }
 /*DEBUT DE LA DEUXIÈME CARTE*/
 
@@ -228,6 +230,7 @@ section .footer-carte4 .bouton-terminer {
 @media screen and (min-width: 710px) and (max-width: 1150px){
 
     section .premiere-carte {
+        
         /* border: 3px solid blue;
         width: 515px;
         max-height: 280px;
@@ -236,7 +239,17 @@ section .footer-carte4 .bouton-terminer {
         background-color: white; */
 
         max-width: 450px;
-        height: 278px;
+        height: 320px;
+        max-height: 350px;
+
+        /* border: 3px solid blue;
+        width: 515px;
+        max-width: 520px;
+        height: 320px;
+        max-height: 350px; */
+        /* border: 1px solid rgba(216, 216, 216, 0.69); */
+        border-radius: 10px;
+        background-color: white;
     }
     textarea[name=article_content] {  
         width : 405px;
@@ -249,6 +262,7 @@ section .footer-carte4 .bouton-terminer {
         width: 960px;
         max-width: 970px;
     }
+
 
     
 
@@ -268,7 +282,9 @@ section .footer-carte4 .bouton-terminer {
 
         width: 410px;
         max-width: 420px;
-        height: 278px;
+
+        height: 320px;
+        max-height: 350px;
     }
     textarea[name=article_content] {  
         width : 365px;
@@ -298,7 +314,9 @@ section .footer-carte4 .bouton-terminer {
 
         width: 310px;
         /* max-width: 420px; */
-        height: 278px;
+        max-width: 450px;
+        height: 300px;
+        max-height: 320px;
     }
     textarea[name=article_content] {  
         width : 265px;
@@ -324,7 +342,7 @@ section .footer-carte4 .bouton-terminer {
     }
 
     section .premiere-carte .le-calendrier img {
-        margin-top: 10px;
+        margin-top: -2px;
         width: 16px;
     }
     
@@ -369,8 +387,11 @@ section .footer-carte4 .bouton-terminer {
 
         width: 310px;
         /* max-width: 420px; */
-        height: 278px;
         margin-bottom: 23px;
+
+        max-width: 450px;
+        height: 300px;
+        max-height: 310px;
     }
     section .mon-titre span {
         font-size: 13px;
@@ -383,7 +404,7 @@ section .footer-carte4 .bouton-terminer {
     }
 
     section .premiere-carte .le-calendrier img {
-        margin-top: 10px;
+        margin-top: -2px;
         width: 14px;
     }
     
