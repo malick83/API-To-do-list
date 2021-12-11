@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/the-style.css">
+    <script src="https://unpkg.com/yombal-dom@1.0.1/utils.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/63e4f39324.js" crossorigin="anonymous"></script>
 </head>
 <body class="bg-light">
@@ -99,19 +100,18 @@
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    
     <section>
         <h1>task board</h1>
         <div class="mes-cartes">
-                    <!-- DEBUT DE LA PREMIÈRE CARTE -->
-            <article class="premiere-carte">
+            
+            <article class="carte">
                 <header class="entete-article">
                     <div class="le-calendrier">
                         <img src="pictures/calendar.png" alt="">
                         <time datetime="2021-12-07 12:30:23">07 / Dec / 2021, 12h : 30</time>
                     </div>
-                    <div class="etiquette">
-                        
-                    </div>
+                    <div class="etiquette"></div>
                 </header>
                 <div class="mon-titre">
                     <h3>Brief: Algorithme</h3>
@@ -123,107 +123,14 @@
                         <img src="pictures/tick-mark.png" alt="">
                         <span>Terminer</span>
                     </button>
-
                     <button class="bouton-suppression">
                         <img src="pictures/delete.png" alt="icone pour supprimer identique à une corbeille dans une machine">
                     </button>
                 </div>
             </article>
-                    <!-- FIN DE LA PREMIÈRE CARTE -->
-
-
-                    <!-- DEBUT DE LA DEUXIÈME CARTE -->
-            <article class="premiere-carte">
-                <header class="entete-article">
-                    <div class="le-calendrier">
-                        <img src="pictures/calendar.png" alt="">
-                        <time datetime="2021-12-07 12:30:23">07 / Dec / 2021, 12h : 30</time>
-                    </div>
-                    <div class="etiquette etiquette2">
-                        
-                    </div>
-                </header>
-                <div class="mon-titre">
-                    <h3>Brief: Algorithme</h3>
-                    <span>En cours</span>
-                </div>
-                <textarea name="article_content" cols="30" rows="10" placeholder="Description" minlength="80" maxlength="85"></textarea>
-                <div class="footer-carte">
-                    <button class="bouton-terminer">
-                        <img src="pictures/tick-mark.png" alt="">
-                        <span>Terminer</span>
-                    </button>
-
-                    <button class="bouton-suppression">
-                        <img src="pictures/delete.png" alt="icone pour supprimer identique à une corbeille dans une machine">
-                    </button>
-                </div>
-            </article>
-                    <!-- FIN DE LA DEUXIÈME CARTE -->
-        </div>
-
-                    <!-- ========================================== -->
-
-        <div class="mes-cartes">
-                    <!-- DEBUT DE LA TROISIÈME CARTE -->
-            <article class="premiere-carte">
-                <header class="entete-article">
-                    <div class="le-calendrier">
-                        <img src="pictures/calendar.png" alt="">
-                        <time datetime="2021-12-07 12:30:23">07 / Dec / 2021, 12h : 30</time>
-                    </div>
-                    <div class="etiquette etiquette3">
-                        
-                    </div>
-                </header>
-                <div class="mon-titre">
-                    <h3>Brief: Algorithme</h3>
-                    <span>Non respectée</span>
-                </div>
-                <textarea name="article_content" cols="30" rows="10" placeholder="Description" minlength="80" maxlength="85"></textarea>
-                <div class="footer-carte">
-                    <button class="bouton-terminer">
-                        <img src="pictures/tick-mark.png" alt="">
-                        <span>Terminer</span>
-                    </button>
-
-                    <button class="bouton-suppression">
-                        <img src="pictures/delete.png" alt="icone pour supprimer identique à une corbeille dans une machine">
-                    </button>
-                </div>
-            </article>
-                    <!-- FIN DE LA TROISIÈME CARTE -->
-    
-    
-                    <!-- DEBUT DE LA QUATRIÈME CARTE -->
-            <article class="premiere-carte">
-                <header class="entete-article">
-                    <div class="le-calendrier">
-                        <img src="pictures/calendar.png" alt="">
-                        <time datetime="2021-12-07 12:30:23">07 / Dec / 2021, 12h : 30</time>
-                    </div>
-                    <div id="carte4" class="etiquette">
-                        
-                    </div>
-                </header>
-                <div class="mon-titre">
-                    <h3>Brief: Algorithme</h3>
-                    <span>Terminée</span>
-                </div>
-                <textarea name="article_content" cols="30" rows="10" placeholder="Description" minlength="80" maxlength="85"></textarea>
-                <div class="footer-carte footer-carte4">
-                    <button class="bouton-terminer">
-                        <img src="pictures/checked-buttom.png" alt="">
-                        <span>Terminer</span>
-                    </button>
-
-                    <button class="bouton-suppression">
-                        <img src="pictures/delete.png" alt="icone pour supprimer identique à une corbeille dans une machine">
-                    </button>
-                </div>
-            </article>
-                    <!-- FIN DE LA QUATRIÈME CARTE -->
         </div>
     </section>
+    <button class="test-button">test button</button>
+    <script src="main.js"></script>
 </body>
 </html>
