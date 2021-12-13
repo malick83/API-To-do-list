@@ -43,6 +43,7 @@ section .mes-cartes {
 }
 
 section .carte {
+    display: none;
     width: 515px;
     max-width: 520px;
     height: 320px;

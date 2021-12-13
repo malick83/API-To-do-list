@@ -9,8 +9,9 @@
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <link rel="stylesheet" href="style/the-style.css">
-    <script src="https://unpkg.com/yombal-dom@1.0.1/utils.js" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/63e4f39324.js" crossorigin="anonymous"></script>
+    <script src="utils.js"></script>
+    <!-- <script src="https://unpkg.com/yombal-dom@1.0.1/utils.js" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://kit.fontawesome.com/63e4f39324.js" crossorigin="anonymous"></script> -->
 </head>
 <body class="bg-light">
     <nav class="container-fluid color-red-simplon d-flex justify-content-between">
@@ -50,22 +51,22 @@
                                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
                             </div>
                             <div class="modal-body bg-light">
-                                <form >
+                                <form class='form-task'>
                                     <div class="m-3">
                                         <label class="form-label required">Titre</label>
-                                        <input type="text" class="form-control">
+                                        <input type="text" class="form-control input-title">
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label  required">Description</label>
-                                        <textarea cols="30" rows="5" class="form-control"></textarea>
+                                        <textarea cols="30" rows="5" class="form-control input-description"></textarea>
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label required">Deadline</label>
-                                        <input type="datetime-local" class="form-control">
+                                        <input type="datetime-local" class="form-control input-deadline">
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label required">Etat</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select select-state" aria-label="Default select example">
                                             <option value="debuter">Débuter</option>
                                             <option value="encours">En cours</option>
                                             <option value="terminer">Terminer</option>
@@ -73,14 +74,14 @@
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label required">Priorité</label>
-                                        <select class="form-select" aria-label="Default select example">
+                                        <select class="form-select  select-priority" aria-label="Default select example">
                                             <option value="faible">Faible</option>
                                             <option value="moyenne">Moyenne</option>
                                             <option value="forte">Forte</option>
                                         </select>
                                     </div>
                                     <div class="modal-footer">
-                                        <button type="submit" class="btn color-red-simplon text-white">Ajouter</button>
+                                        <button type="submit" class="btn color-red-simplon text-white addBtn">Ajouter</button>
                                     </div>
                                     
                                 </form>
@@ -101,6 +102,9 @@
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
+
+<!-- =============================== cartes =============================== -->
+
     <section>
         <h1>task board</h1>
         <div class="mes-cartes">
@@ -130,7 +134,8 @@
             </article>
         </div>
     </section>
-    <button class="test-button">test button</button>
-    <script src="main.js"></script>
+    <!-- <button class="test-button">test button</button> -->
+    <!-- <script src="./dist/main.bundled.js"></script> -->
+    <script src="./src/main.js"></script>
 </body>
 </html>
