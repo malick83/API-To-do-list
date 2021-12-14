@@ -51,9 +51,6 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
 
     containeurDesCartes.append(nouvelleCarte);
     
-    ajouterDansDatabase(taskModel);
-    // supprimerDansDatabase(18);
-
     buttonFermetureFormulaire.click();
 })
 
@@ -104,7 +101,23 @@ function supprimerDansDatabase(id){
     }).then( data => data.json())
 }
 
+function modifierDansDatabase(id, nouvelleTache){
+    fetch(`${url}?apikey=${apiKey}&id=eq.${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(nouvelleTache),
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+        }
+    }).then( data => data.json())
+}
 
+async function recupererDansDatabase() { 
+    fetch(`${url}?apikey=${apiKey}`)
+        .then( data => data.json())
+        .then( listeDesTaches => listeDesTaches)
+        .then( listeDesTaches => console.log(listeDesTaches))
+}
 /* retourne true si les champs requis sont correcte et false sinon
 function verifierLesChamps(saisi){
     return (
