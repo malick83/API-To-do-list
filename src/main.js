@@ -2,22 +2,16 @@ let modeleCarte = document.querySelector('.carte');
 let containeurDesCartes = document.querySelector('.mes-cartes')
 let button =  document.querySelector('.test-button')
 let buttonAjouter = document.querySelector('.addBtn')
+let tousLesButtonSupprimer;
 let formulaireDeTache = document.querySelector('.form-task')
-let buttonSupprimer = document.querySelectorAll('.bouton-suppression')
 let buttonFermetureFormulaire = document.querySelector('.btn-close')
 let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4OTc5MDUxLCJleHAiOjE5NTQ1NTUwNTF9.9zUm7vEolQ-I2qKcxN3NIz2I-o2iAiSoAZzwdy8fO5g"
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
-let taskModel = {
-    "title":"brief : algo",
-    "state":"en cours",
-    "description":"description de merde",
-    "deadline":'23/11/23 23:23',
-    "priority":"faible",
-    "ended":true
-}
-
+afficherLesTaches();
 //ramata 
+
+
 
 function ajouterTache(){
 
@@ -26,45 +20,48 @@ function ajouterTache(){
     let nouvelleCarte =  creerCarte(saisi);
 
     containeurDesCartes.appendChild(nouvelleCarte);
+
+    ajouterDansDatabase(saisi)
+}
+
+//rokhaya
+function supprimerTache(carte){
+    let id = carte.getAttribute('data-id');
+    carte.remove()
+    supprimerDansDatabase(id);
 }
 
 
-
-//rokhaya
-// function supprimerTache(){
-    
-//     let nouvelleCarte =  creerCarte(recupererLesChamps());
-//     const tab= []
-//     tab.push(nouvelleCarte)
-//     console.log(tab.length);
-//     for (let i = 0; i < tab.length; i++) {
-//         //const element = tab[i];
-//         //  console.log(element);
-//         //  element.querySelector('.carte').style.display = 'none';
-//         //  console.log(element);
-//         console.log(tab[i]);
-//         //tab[i].style.display = 'none';
-//         console.log(tab[i]);
-//     }
-   
-// }
-
 // abdou karim
-function modifierTache(id){}
+function modifierTache(id){
+    let nouvelleModification = recupererLesChamps();
+
+    // tu modifier dans la page
+    modifierDansDatabase(id, nouvelleModification);
+}
 
 //kebe
-function afficherLesTaches(){
+async function afficherLesTaches(){
     fetch(`${url}?apikey=${apiKey}`)
     .then( data => data.json())
     .then( listeDesTaches => {
-        console.log(listeDesTaches)
         for (const tache of listeDesTaches) {
             let nouvelleCarte = creerCarte(tache);
             containeurDesCartes.appendChild(nouvelleCarte);
         }
     })
+    // ajouter les evens sur les buttons
+    .then( ()=>{
+        tousLesButtonSupprimer = document.querySelectorAll('.bouton-suppression');
+        for (const buttonSupprimer of tousLesButtonSupprimer) {
+            buttonSupprimer.addEventListener('click', evenement =>{
+                let buttonSupprimer = evenement.target;
+                let carteDuButton = buttonSupprimer.parentNode.parentNode.parentNode
+                supprimerTache(carteDuButton);
+            })
+        }
+    })
 }
-afficherLesTaches()
 
 /* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
@@ -90,7 +87,7 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
 function creerCarte(tache){
     let carte = modeleCarte.cloneNode(true);
     document.querySelector('.carte').style.display = 'block';
-    document.querySelector('.carte').setAttribute('id', tache.id);
+    document.querySelector('.carte').setAttribute('data-id', tache.id);
     document.querySelector('.mon-titre h3').innerText = tache.title;
     document.querySelector('time').innerText = tache.deadline;
     document.querySelector('.mon-titre span').innerHTML = tache.state;
@@ -111,7 +108,6 @@ function creerCarte(tache){
     }
     return carte;
 }
-
 
 function ajouterDansDatabase(tache){
     fetch(`${url}?apikey=${apiKey}`, {
@@ -142,18 +138,3 @@ function modifierDansDatabase(id, nouvelleTache){
         }
     }).then( data => data.json())
 }
-
-async function recupererDansDatabase() { 
-    fetch(`${url}?apikey=${apiKey}`)
-        .then( data => data.json())
-        .then( listeDesTaches => listeDesTaches)
-        // .then( listeDesTaches => console.log(listeDesTaches))
-}
-/* retourne true si les champs requis sont correcte et false sinon
-function verifierLesChamps(saisi){
-    return (
-        saisi.title.length >= 3 &&
-        saisi.description >= 3 &&
-        deadline != null
-    )
-}*/
