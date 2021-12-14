@@ -29,7 +29,12 @@ function supprimerTache(id){}
 function modifierTache(id){}
 
 //kebe
-function afficherLesTaches(){}
+function afficherLesTaches(){
+    fetch(`${url}?apikey=${apiKey}`)
+    .then( data => data.json())
+    .then( listeDesTaches => console.log(listeDesTaches))
+}
+afficherLesTaches()
 
 /* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
@@ -82,6 +87,7 @@ function creerCarte(tache){
     return carte;
 }
 
+
 function ajouterDansDatabase(tache){
     fetch(`${url}?apikey=${apiKey}`, {
         method: "POST",
@@ -116,7 +122,7 @@ async function recupererDansDatabase() {
     fetch(`${url}?apikey=${apiKey}`)
         .then( data => data.json())
         .then( listeDesTaches => listeDesTaches)
-        .then( listeDesTaches => console.log(listeDesTaches))
+        // .then( listeDesTaches => console.log(listeDesTaches))
 }
 /* retourne true si les champs requis sont correcte et false sinon
 function verifierLesChamps(saisi){
