@@ -1,17 +1,17 @@
 let modeleCarte = document.querySelector('.carte');
+let btnOpenModel = document.querySelector('.btn-open-modal')
 let containeurDesCartes = document.querySelector('.mes-cartes')
 let button =  document.querySelector('.test-button')
 let buttonAjouter = document.querySelector('.addBtn')
 let tousLesButtonSupprimer;
+let tousLesCartes;
+let tousLesButtonTerminer;
 let formulaireDeTache = document.querySelector('.form-task')
 let buttonFermetureFormulaire = document.querySelector('.btn-close')
 let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4OTc5MDUxLCJleHAiOjE5NTQ1NTUwNTF9.9zUm7vEolQ-I2qKcxN3NIz2I-o2iAiSoAZzwdy8fO5g"
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
 afficherLesTaches();
-//ramata 
-
-
 
 function ajouterTache(){
 
@@ -24,22 +24,21 @@ function ajouterTache(){
     ajouterDansDatabase(saisi)
 }
 
-//rokhaya
+
 function supprimerTache(carte){
     let id = carte.getAttribute('data-id');
     carte.remove()
     supprimerDansDatabase(id);
 }
 
-// abdou karim
-function modifierTache(id){
-    let nouvelleModification = recupererLesChamps();
-
+function modifierTache(carte, modification){
+    let id = carte.getAttribute('data-id');
+    document.querySelector('.btn-add-task').lastElementChild.click();
+    // let ancienTache = recupererLesChamps();
     // tu modifier dans la page
-    modifierDansDatabase(id, nouvelleModification);
+    // modifierDansDatabase(id, modification);
 }
 
-//kebe
 async function afficherLesTaches(){
     fetch(`${url}?apikey=${apiKey}`)
     .then( data => data.json())
@@ -51,12 +50,24 @@ async function afficherLesTaches(){
     })
     // ajouter les evens sur les buttons
     .then( ()=>{
-        tousLesButtonSupprimer = document.querySelectorAll('.bouton-suppression');
-        for (const buttonSupprimer of tousLesButtonSupprimer) {
-            buttonSupprimer.addEventListener('click', evenement =>{
-                let buttonSupprimer = evenement.target;
-                let carteDuButton = buttonSupprimer.parentNode.parentNode.parentNode
-                supprimerTache(carteDuButton);
+        tousLesCartes = document.querySelectorAll('.carte');
+
+        for (const carte of tousLesCartes) {
+            let buttonSupprimer = carte.lastElementChild.lastElementChild;
+            let buttonTerminer = carte.lastElementChild.firstElementChild; 
+            buttonSupprimer.addEventListener('click', (e) =>{
+                e.stopPropagation();
+                supprimerTache(carte);
+            })
+            buttonTerminer.addEventListener('click', (e) =>{
+                e.stopPropagation();
+                e.target.classList.toggle("ended");
+                let ended = e.target.classList.contains("ended");
+                modifierDansDatabase(carte.getAttribute('data-id'), {ended});
+            })
+            button.addEventListener('click', (e)=>{
+                e.stopPropagation();
+                modifierTache(carte, {title:"fkkf"});
             })
         }
     })

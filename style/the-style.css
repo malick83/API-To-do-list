@@ -164,9 +164,17 @@ section .footer-carte .bouton-terminer span {
     margin-left: 3px;
     margin-right: 8px;
     margin-top: -5px;
-    color: #A8A8A8;
+    color: green;/*#A8A8A8;*/
     font-size: 18px;
 }
+
+.ended {
+    color: #A8A8A8 !important;
+    font-size: 18px;
+    text-decoration:line-through;
+    opacity: 0.7;
+}
+
 
 section .footer-carte .bouton-suppression {
     background-color: white;
