@@ -18,11 +18,20 @@ let taskModel = {
 }
 
 //ramata 
-function ajouterTache(tache){
 
+function ajouterTache(){
+
+    let saisi = recupererLesChamps();
+
+    let nouvelleCarte =  creerCarte(saisi);
+
+    containeurDesCartes.appendChild(nouvelleCarte);
 }
 
+
+
 //rokhaya
+<<<<<<< HEAD
 function supprimerTache(){
     
     let nouvelleCarte =  creerCarte(recupererLesChamps());
@@ -39,13 +48,28 @@ function supprimerTache(){
         console.log(tab[i]);
     }
    
+=======
+function supprimerTache(id){
+
+>>>>>>> 8662bec2d11abf3985cf56bcacf6c25791978b14
 }
 
 // abdou karim
 function modifierTache(id){}
 
 //kebe
-function afficherLesTaches(){}
+function afficherLesTaches(){
+    fetch(`${url}?apikey=${apiKey}`)
+    .then( data => data.json())
+    .then( listeDesTaches => {
+        console.log(listeDesTaches)
+        for (const tache of listeDesTaches) {
+            let nouvelleCarte = creerCarte(tache);
+            containeurDesCartes.appendChild(nouvelleCarte);
+        }
+    })
+}
+afficherLesTaches()
 
 /* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
@@ -63,14 +87,9 @@ function recupererLesChamps(){
 formulaireDeTache.addEventListener('submit', (evenement)=>{
     evenement.preventDefault()
     // console.log(recupererLesChamps())
-    let nouvelleCarte =  creerCarte(recupererLesChamps());
-
-    containeurDesCartes.append(nouvelleCarte);
-    
+    ajouterTache()
     buttonFermetureFormulaire.click();
 })
-
-
 
 /* retourne l'element carte creer a partir de tache(JSON)*/
 function creerCarte(tache){
@@ -97,6 +116,7 @@ function creerCarte(tache){
     }
     return carte;
 }
+
 
 function ajouterDansDatabase(tache){
     fetch(`${url}?apikey=${apiKey}`, {
@@ -132,7 +152,7 @@ async function recupererDansDatabase() {
     fetch(`${url}?apikey=${apiKey}`)
         .then( data => data.json())
         .then( listeDesTaches => listeDesTaches)
-        .then( listeDesTaches => console.log(listeDesTaches))
+        // .then( listeDesTaches => console.log(listeDesTaches))
 }
 /* retourne true si les champs requis sont correcte et false sinon
 function verifierLesChamps(saisi){
