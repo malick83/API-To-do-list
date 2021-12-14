@@ -24,9 +24,21 @@ function ajouterTache(tache){
 
 //rokhaya
 function supprimerTache(){
-   console.log("hello word")
-   removeEventListener()
     
+    let nouvelleCarte =  creerCarte(recupererLesChamps());
+    const tab= []
+    tab.push(nouvelleCarte)
+    console.log(tab.length);
+    for (let i = 0; i < tab.length; i++) {
+        //const element = tab[i];
+        //  console.log(element);
+        //  element.querySelector('.carte').style.display = 'none';
+        //  console.log(element);
+        console.log(tab[i]);
+        //tab[i].style.display = 'none';
+        console.log(tab[i]);
+    }
+   
 }
 
 // abdou karim
