@@ -46,12 +46,14 @@ section .carte {
     display: none;
     width: 515px;
     max-width: 520px;
-    height: 320px;
+    /* height: 320px; */
     margin-bottom: 10vh;
     max-height: 350px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
     background-color: white;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
  section .entete-article {
      position: relative;
@@ -99,7 +101,7 @@ section .carte .etiquette {
 }
 
 
-textarea[name=article_content], .description
+/* textarea[name=article_content]
 {
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 9px;
@@ -111,7 +113,20 @@ textarea[name=article_content], .description
     padding-left: 23px;
     padding-top: 18px;
     font-family: 'Sen', sans-serif;
+} */
+
+.ma-description {
+    border: 1px solid rgba(216, 216, 216, 0.69);
+    border-radius: 9px;    
+    width : 465px;
+    height : 118px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 23px;
+    padding-top: 18px;
+    font-family: 'Sen', sans-serif;
 }
+
 
 section .mon-titre{
     /* border: 3px solid tomato; */
@@ -212,12 +227,12 @@ section .footer-carte4 .bouton-terminer {
 
     section .carte {
         max-width: 450px;
-        height: 320px;
-        max-height: 350px;
+        /* height: 320px; */
+        /* max-height: 350px; */
         border-radius: 10px;
         background-color: white;
     }
-    textarea[name=article_content], .description {  
+    .ma-description {  
         width : 405px;
 
     }
@@ -237,10 +252,10 @@ section .footer-carte4 .bouton-terminer {
         width: 410px;
         max-width: 420px;
 
-        height: 320px;
-        max-height: 350px;
+        /* height: 320px; */
+        /* max-height: 350px; */
     }
-    textarea[name=article_content], .description {  
+    .ma-description {  
         width : 365px;
 
     }
@@ -258,10 +273,10 @@ section .footer-carte4 .bouton-terminer {
 
         width: 310px;
         max-width: 450px;
-        height: 300px;
-        max-height: 320px;
+        /* height: 300px; */
+        /* max-height: 320px; */
     }
-    textarea[name=article_content], .description {  
+    .ma-description {  
         width : 265px;
 
     }
@@ -314,8 +329,8 @@ section .footer-carte4 .bouton-terminer {
         margin-bottom: 23px;
 
         max-width: 450px;
-        height: 300px;
-        max-height: 310px;
+        /* height: 300px; */
+        /* max-height: 310px; */
     }
     section .mon-titre span {
         font-size: 13px;

@@ -110,6 +110,7 @@ function creerCarte(tache){
     return carte;
 }
 
+
 function ajouterDansDatabase(tache){
     fetch(`${url}?apikey=${apiKey}`, {
         method: "POST",
@@ -139,4 +140,3 @@ function modifierDansDatabase(id, nouvelleTache){
         }
     }).then( data => data.json())
 }
-
