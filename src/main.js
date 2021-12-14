@@ -31,28 +31,23 @@ function ajouterTache(){
 
 
 //rokhaya
-<<<<<<< HEAD
-function supprimerTache(){
+// function supprimerTache(){
     
-    let nouvelleCarte =  creerCarte(recupererLesChamps());
-    const tab= []
-    tab.push(nouvelleCarte)
-    console.log(tab.length);
-    for (let i = 0; i < tab.length; i++) {
-        //const element = tab[i];
-        //  console.log(element);
-        //  element.querySelector('.carte').style.display = 'none';
-        //  console.log(element);
-        console.log(tab[i]);
-        //tab[i].style.display = 'none';
-        console.log(tab[i]);
-    }
+//     let nouvelleCarte =  creerCarte(recupererLesChamps());
+//     const tab= []
+//     tab.push(nouvelleCarte)
+//     console.log(tab.length);
+//     for (let i = 0; i < tab.length; i++) {
+//         //const element = tab[i];
+//         //  console.log(element);
+//         //  element.querySelector('.carte').style.display = 'none';
+//         //  console.log(element);
+//         console.log(tab[i]);
+//         //tab[i].style.display = 'none';
+//         console.log(tab[i]);
+//     }
    
-=======
-function supprimerTache(id){
-
->>>>>>> 8662bec2d11abf3985cf56bcacf6c25791978b14
-}
+// }
 
 // abdou karim
 function modifierTache(id){}
