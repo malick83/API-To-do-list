@@ -105,9 +105,9 @@ section .premiere-carte .etiquette {
     margin-top: 6px;
 }
 
-section .deuxieme-carte {
-    /* border: 3px solid springgreen; */
-}
+/* section .deuxieme-carte {
+    border: 3px solid springgreen;
+} */
 
 textarea[name=article_content]
 {
