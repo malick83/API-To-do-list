@@ -30,7 +30,7 @@ function modifierTache(id){}
 //kebe
 function afficherLesTaches(){}
 
-
+/* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
     let title = document.querySelector('.input-title').value;
     let description = document.querySelector('.input-description').value;
@@ -53,15 +53,9 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
     buttonFermetureFormulaire.click();
 })
 
-/* retourne true si les champs requis sont correcte et false sinon*/
-function verifierLesChamps(saisi){
-    return (
-        saisi.title.length >= 3 &&
-        saisi.description >= 3 &&
-        deadline != null
-    )
-}
 
+
+/* retourne l'element carte creer a partir de tache(JSON)*/
 function creerCarte(tache){
     let carte = modeleCarte.cloneNode(true);
     document.querySelector('.carte').style.display = 'block';
@@ -69,7 +63,7 @@ function creerCarte(tache){
     document.querySelector('.mon-titre h3').innerText = tache.title;
     document.querySelector('time').innerText = tache.deadline;
     document.querySelector('.mon-titre span').innerHTML = tache.state;
-    document.querySelector('textarea').innerHTML = tache.description;
+    document.querySelector('.description').innerHTML = tache.description;
     switch (tache.priority) {
         case "faible":
             document.querySelector('.etiquette').style.backgroundColor = "green";
@@ -86,3 +80,13 @@ function creerCarte(tache){
     }
     return carte;
 }
+
+
+/* retourne true si les champs requis sont correcte et false sinon
+function verifierLesChamps(saisi){
+    return (
+        saisi.title.length >= 3 &&
+        saisi.description >= 3 &&
+        deadline != null
+    )
+}*/

@@ -99,7 +99,7 @@ section .carte .etiquette {
 }
 
 
-textarea[name=article_content]
+textarea[name=article_content], .description
 {
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 9px;
@@ -217,7 +217,7 @@ section .footer-carte4 .bouton-terminer {
         border-radius: 10px;
         background-color: white;
     }
-    textarea[name=article_content] {  
+    textarea[name=article_content], .description {  
         width : 405px;
 
     }
@@ -240,7 +240,7 @@ section .footer-carte4 .bouton-terminer {
         height: 320px;
         max-height: 350px;
     }
-    textarea[name=article_content] {  
+    textarea[name=article_content], .description {  
         width : 365px;
 
     }
@@ -262,7 +262,7 @@ section .footer-carte4 .bouton-terminer {
         height: 300px;
         max-height: 320px;
     }
-    textarea[name=article_content] {  
+    textarea[name=article_content], .description {  
         width : 265px;
 
     }
