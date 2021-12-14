@@ -18,6 +18,7 @@ let taskModel = {
 }
 
 //ramata 
+
 function ajouterTache(){
 
     let saisi = recupererLesChamps();
@@ -25,11 +26,9 @@ function ajouterTache(){
     let nouvelleCarte =  creerCarte(saisi);
 
     containeurDesCartes.appendChild(nouvelleCarte);
-
-    ajouterDansDatabase(saisi);
-
-
 }
+
+
 
 //rokhaya
 function supprimerTache(id){
@@ -44,8 +43,10 @@ function afficherLesTaches(){
     fetch(`${url}?apikey=${apiKey}`)
     .then( data => data.json())
     .then( listeDesTaches => {
+        console.log(listeDesTaches)
         for (const tache of listeDesTaches) {
-            creerCarte(tache);
+            let nouvelleCarte = creerCarte(tache);
+            containeurDesCartes.appendChild(nouvelleCarte);
         }
     })
 }
