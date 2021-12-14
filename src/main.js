@@ -27,10 +27,20 @@ function ajouterTache(){
 //rokhaya
 function supprimerTache(id){
 
+    // supprime dans la page
+
+    supprimerDansDatabase(id);
 }
 
 // abdou karim
-function modifierTache(id){}
+function modifierTache(id){
+    let nouvelleModification = recupererLesChamps();
+
+    // tu modifier dans la page
+
+
+    modifierDansDatabase(id, nouvelleModification);
+}
 
 //kebe
 function afficherLesTaches(){
@@ -70,7 +80,7 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
 function creerCarte(tache){
     let carte = modeleCarte.cloneNode(true);
     document.querySelector('.carte').style.display = 'block';
-    document.querySelector('.carte').setAttribute('id', tache.id);
+    document.querySelector('.carte').setAttribute('data-id', tache.id);
     document.querySelector('.mon-titre h3').innerText = tache.title;
     document.querySelector('time').innerText = tache.deadline;
     document.querySelector('.mon-titre span').innerHTML = tache.state;
@@ -122,17 +132,3 @@ function modifierDansDatabase(id, nouvelleTache){
     }).then( data => data.json())
 }
 
-async function recupererDansDatabase() { 
-    fetch(`${url}?apikey=${apiKey}`)
-        .then( data => data.json())
-        .then( listeDesTaches => listeDesTaches)
-        .then( listeDesTaches => console.log(listeDesTaches))
-}
-/* retourne true si les champs requis sont correcte et false sinon
-function verifierLesChamps(saisi){
-    return (
-        saisi.title.length >= 3 &&
-        saisi.description >= 3 &&
-        deadline != null
-    )
-}*/
