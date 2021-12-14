@@ -2,14 +2,16 @@ let modeleCarte = document.querySelector('.carte');
 let containeurDesCartes = document.querySelector('.mes-cartes')
 let button =  document.querySelector('.test-button')
 let buttonAjouter = document.querySelector('.addBtn')
+let tousLesButtonSupprimer;
 let formulaireDeTache = document.querySelector('.form-task')
-let buttonSupprimer = document.querySelectorAll('.bouton-suppression')
 let buttonFermetureFormulaire = document.querySelector('.btn-close')
 let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4OTc5MDUxLCJleHAiOjE5NTQ1NTUwNTF9.9zUm7vEolQ-I2qKcxN3NIz2I-o2iAiSoAZzwdy8fO5g"
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
-
+afficherLesTaches();
 //ramata 
+
+
 
 function ajouterTache(){
 
@@ -22,13 +24,10 @@ function ajouterTache(){
     ajouterDansDatabase(saisi)
 }
 
-
-
 //rokhaya
-function supprimerTache(id){
-
-    // supprime dans la page
-
+function supprimerTache(carte){
+    let id = carte.getAttribute('data-id');
+    carte.remove()
     supprimerDansDatabase(id);
 }
 
@@ -37,24 +36,31 @@ function modifierTache(id){
     let nouvelleModification = recupererLesChamps();
 
     // tu modifier dans la page
-
-
     modifierDansDatabase(id, nouvelleModification);
 }
 
 //kebe
-function afficherLesTaches(){
+async function afficherLesTaches(){
     fetch(`${url}?apikey=${apiKey}`)
     .then( data => data.json())
     .then( listeDesTaches => {
-        console.log(listeDesTaches)
         for (const tache of listeDesTaches) {
             let nouvelleCarte = creerCarte(tache);
             containeurDesCartes.appendChild(nouvelleCarte);
         }
     })
+    // ajouter les evens sur les buttons
+    .then( ()=>{
+        tousLesButtonSupprimer = document.querySelectorAll('.bouton-suppression');
+        for (const buttonSupprimer of tousLesButtonSupprimer) {
+            buttonSupprimer.addEventListener('click', evenement =>{
+                let buttonSupprimer = evenement.target;
+                let carteDuButton = buttonSupprimer.parentNode.parentNode.parentNode
+                supprimerTache(carteDuButton);
+            })
+        }
+    })
 }
-afficherLesTaches()
 
 /* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
