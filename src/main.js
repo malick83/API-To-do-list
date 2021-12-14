@@ -22,7 +22,11 @@ function ajouterTache(tache){
 }
 
 //rokhaya
-function supprimerTache(id){}
+function supprimerTache(){
+   console.log("hello word")
+   removeEventListener()
+    
+}
 
 // abdou karim
 function modifierTache(id){}
