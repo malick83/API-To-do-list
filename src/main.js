@@ -15,3 +15,10 @@ let taskModel = {
     ended:true
 }
 
+function ajouterTache(){}
+
+function supprimerTache(){}
+
+function modifierTache(){}
+
+function afficherLesTaches(){}
