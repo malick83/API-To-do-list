@@ -8,14 +8,6 @@ let buttonFermetureFormulaire = document.querySelector('.btn-close')
 let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4OTc5MDUxLCJleHAiOjE5NTQ1NTUwNTF9.9zUm7vEolQ-I2qKcxN3NIz2I-o2iAiSoAZzwdy8fO5g"
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
-let taskModel = {
-    "title":"brief : algo",
-    "state":"en cours",
-    "description":"description de merde",
-    "deadline":'23/11/23 23:23',
-    "priority":"faible",
-    "ended":true
-}
 
 //ramata 
 
@@ -26,6 +18,8 @@ function ajouterTache(){
     let nouvelleCarte =  creerCarte(saisi);
 
     containeurDesCartes.appendChild(nouvelleCarte);
+
+    ajouterDansDatabase(saisi)
 }
 
 
