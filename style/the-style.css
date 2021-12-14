@@ -46,12 +46,14 @@ section .carte {
     display: none;
     width: 515px;
     max-width: 520px;
-    height: 320px;
+    /* height: 320px; */
     margin-bottom: 10vh;
     max-height: 350px;
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
     background-color: white;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
  section .entete-article {
      position: relative;
@@ -225,8 +227,8 @@ section .footer-carte4 .bouton-terminer {
 
     section .carte {
         max-width: 450px;
-        height: 320px;
-        max-height: 350px;
+        /* height: 320px; */
+        /* max-height: 350px; */
         border-radius: 10px;
         background-color: white;
     }
@@ -250,8 +252,8 @@ section .footer-carte4 .bouton-terminer {
         width: 410px;
         max-width: 420px;
 
-        height: 320px;
-        max-height: 350px;
+        /* height: 320px; */
+        /* max-height: 350px; */
     }
     .ma-description {  
         width : 365px;
@@ -272,8 +274,8 @@ section .footer-carte4 .bouton-terminer {
 
         width: 310px;
         max-width: 450px;
-        height: 300px;
-        max-height: 320px;
+        /* height: 300px; */
+        /* max-height: 320px; */
     }
     .ma-description {  
         width : 265px;
@@ -328,8 +330,8 @@ section .footer-carte4 .bouton-terminer {
         margin-bottom: 23px;
 
         max-width: 450px;
-        height: 300px;
-        max-height: 310px;
+        /* height: 300px; */
+        /* max-height: 310px; */
     }
     section .mon-titre span {
         font-size: 13px;
