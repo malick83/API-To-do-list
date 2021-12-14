@@ -26,3 +26,8 @@ function modifierTache(){}
 
 //kebe
 function afficherLesTaches(){}
+
+
+function recupererLesChamps(){
+    
+}
