@@ -18,12 +18,23 @@ let taskModel = {
 }
 
 //ramata 
-function ajouterTache(tache){
+function ajouterTache(){
+
+    let saisi = recupererLesChamps();
+
+    let nouvelleCarte =  creerCarte(saisi);
+
+    containeurDesCartes.appendChild(nouvelleCarte);
+
+    ajouterDansDatabase(saisi);
+
 
 }
 
 //rokhaya
-function supprimerTache(id){}
+function supprimerTache(id){
+
+}
 
 // abdou karim
 function modifierTache(id){}
@@ -47,14 +58,9 @@ function recupererLesChamps(){
 formulaireDeTache.addEventListener('submit', (evenement)=>{
     evenement.preventDefault()
     // console.log(recupererLesChamps())
-    let nouvelleCarte =  creerCarte(recupererLesChamps());
-
-    containeurDesCartes.append(nouvelleCarte);
-    
+    ajouterTache()
     buttonFermetureFormulaire.click();
 })
-
-
 
 /* retourne l'element carte creer a partir de tache(JSON)*/
 function creerCarte(tache){
