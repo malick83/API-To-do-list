@@ -8,3 +8,6 @@ C'est le dépôt du font-end
 * ensuite crée sa propre branche pour la fonctionnalité qu'il travaille;
 * s'il termine, il fait un pull-request sur la branche develop et non sur la branche main;
 * veuillez respecter la maquette proposée, car toute fonctionnalité qui ne le respecte pas, sera rejetée
+
+
+### Dans src/main.js y a vos noms "ci kaw" les fonctions que vous devez implementées
