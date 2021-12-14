@@ -52,7 +52,7 @@ section .carte {
     border: 1px solid rgba(216, 216, 216, 0.69);
     border-radius: 10px;
     background-color: white;
-    padding-bottom: 15px;
+    padding-bottom: 5px;
     padding-left: 15px;
 }
  section .entete-article {
@@ -125,6 +125,13 @@ section .carte .etiquette {
     padding-left: 23px;
     padding-top: 18px;
     font-family: 'Sen', sans-serif;
+}
+
+.description {
+    margin-left: 23px;
+    /* text-align: justify; */
+    width: 430px;
+
 }
 
 
@@ -236,6 +243,13 @@ section .footer-carte4 .bouton-terminer {
         width : 405px;
 
     }
+
+    .description {
+        margin-left: 23px;
+        width: 330px;
+    
+    }
+    
 
     section {
         width: 960px;
@@ -358,6 +372,14 @@ section .footer-carte4 .bouton-terminer {
     section h1 {
         font-size: 22px;
     }
+
+    .description {
+        margin-left: 23px;
+        /* text-align: justify; */
+        width: 230px;
+    
+    }
+    
 }
 
 
