@@ -9,16 +9,17 @@ let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlI
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
 let taskModel = {
-    title:"brief : algo",
-    state:"en cours",
-    description:"description de merde",
-    deadline:"23/11/23 23:23",
-    priority:"faible",
-    ended:true
+    "title":"brief : algo",
+    "state":"en cours",
+    "description":"description de merde",
+    "deadline":'23/11/23 23:23',
+    "priority":"faible",
+    "ended":true
 }
 
 //ramata 
 function ajouterTache(tache){
+
 }
 
 //rokhaya
@@ -34,7 +35,7 @@ function modifierTache(id){}
 //kebe
 function afficherLesTaches(){}
 
-
+/* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
     let title = document.querySelector('.input-title').value;
     let description = document.querySelector('.input-description').value;
@@ -52,20 +53,14 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
     // console.log(recupererLesChamps())
     let nouvelleCarte =  creerCarte(recupererLesChamps());
 
-    containeurDesCartes.appendChild(nouvelleCarte);
-
+    containeurDesCartes.append(nouvelleCarte);
+    
     buttonFermetureFormulaire.click();
 })
 
-/* retourne true si les champs requis sont correcte et false sinon*/
-function verifierLesChamps(saisi){
-    return (
-        saisi.title.length >= 3 &&
-        saisi.description >= 3 &&
-        deadline != null
-    )
-}
 
+
+/* retourne l'element carte creer a partir de tache(JSON)*/
 function creerCarte(tache){
     let carte = modeleCarte.cloneNode(true);
     document.querySelector('.carte').style.display = 'block';
@@ -73,7 +68,7 @@ function creerCarte(tache){
     document.querySelector('.mon-titre h3').innerText = tache.title;
     document.querySelector('time').innerText = tache.deadline;
     document.querySelector('.mon-titre span').innerHTML = tache.state;
-    document.querySelector('textarea').innerHTML = tache.description;
+    document.querySelector('.description').innerHTML = tache.description;
     switch (tache.priority) {
         case "faible":
             document.querySelector('.etiquette').style.backgroundColor = "green";
@@ -90,3 +85,48 @@ function creerCarte(tache){
     }
     return carte;
 }
+
+function ajouterDansDatabase(tache){
+    fetch(`${url}?apikey=${apiKey}`, {
+        method: "POST",
+        body: JSON.stringify(tache),
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then( data => data.json())
+}
+
+function supprimerDansDatabase(id){
+    fetch(`${url}?apikey=${apiKey}&id=eq.${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`
+        }
+    }).then( data => data.json())
+}
+
+function modifierDansDatabase(id, nouvelleTache){
+    fetch(`${url}?apikey=${apiKey}&id=eq.${id}`, {
+        method: "PATCH",
+        body: JSON.stringify(nouvelleTache),
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${apiKey}`
+        }
+    }).then( data => data.json())
+}
+
+async function recupererDansDatabase() { 
+    fetch(`${url}?apikey=${apiKey}`)
+        .then( data => data.json())
+        .then( listeDesTaches => listeDesTaches)
+        .then( listeDesTaches => console.log(listeDesTaches))
+}
+/* retourne true si les champs requis sont correcte et false sinon
+function verifierLesChamps(saisi){
+    return (
+        saisi.title.length >= 3 &&
+        saisi.description >= 3 &&
+        deadline != null
+    )
+}*/

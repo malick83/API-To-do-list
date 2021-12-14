@@ -52,7 +52,7 @@
                                 <form class='form-task'>
                                     <div class="m-3">
                                         <label class="form-label required">Titre</label>
-                                        <input type="text" class="form-control input-title">
+                                        <input type="text" class="form-control input-title" required>
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label  required">Description</label>
@@ -60,7 +60,7 @@
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label required">Deadline</label>
-                                        <input type="datetime-local" class="form-control input-deadline">
+                                        <input type="datetime-local" name="meeting-time" value="2018-06-12T19:30" class="form-control input-deadline">
                                     </div>
                                     <div class="m-3">
                                         <label class="form-label required">Etat</label>
@@ -119,7 +119,8 @@
                     <h3>Brief: Algorithme</h3>
                     <span>En cours</span>
                 </div>
-                <textarea name="article_content" cols="30" rows="10" placeholder="Description" minlength="80" maxlength="85"></textarea>
+                <p class="description"></p>
+                <!-- <textarea name="article_content" cols="30" rows="10" placeholder="Description" minlength="80" maxlength="85"></textarea> -->
                 <div class="footer-carte">
                     <button class="bouton-terminer">
                         <img src="pictures/tick-mark.png" alt="">
