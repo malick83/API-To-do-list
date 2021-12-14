@@ -9,16 +9,17 @@ let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlI
 let url = "https://pomvfsgmnducyfclngvq.supabase.co/rest/v1/tasks"
 
 let taskModel = {
-    title:"brief : algo",
-    state:"en cours",
-    description:"description de merde",
-    deadline:"23/11/23 23:23",
-    priority:"faible",
-    ended:true
+    "title":"brief : algo",
+    "state":"en cours",
+    "description":"description de merde",
+    "deadline":'23/11/23 23:23',
+    "priority":"faible",
+    "ended":true
 }
 
 //ramata 
 function ajouterTache(tache){
+
 }
 
 //rokhaya
@@ -48,7 +49,10 @@ formulaireDeTache.addEventListener('submit', (evenement)=>{
     // console.log(recupererLesChamps())
     let nouvelleCarte =  creerCarte(recupererLesChamps());
 
-    containeurDesCartes.appendChild(nouvelleCarte);
+    containeurDesCartes.append(nouvelleCarte);
+    
+    ajouterDansDatabase(taskModel);
+    // supprimerDansDatabase(18);
 
     buttonFermetureFormulaire.click();
 })
@@ -79,6 +83,25 @@ function creerCarte(tache){
             break;
     }
     return carte;
+}
+
+function ajouterDansDatabase(tache){
+    fetch(`${url}?apikey=${apiKey}`, {
+        method: "POST",
+        body: JSON.stringify(tache),
+        headers: {
+            "Content-Type": "application/json",
+        }
+    }).then( data => data.json())
+}
+
+function supprimerDansDatabase(id){
+    fetch(`${url}?apikey=${apiKey}&id=eq.${id}`, {
+        method: "DELETE",
+        headers: {
+            "Authorization": `Bearer ${apiKey}`
+        }
+    }).then( data => data.json())
 }
 
 
