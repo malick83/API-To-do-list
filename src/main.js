@@ -1,4 +1,4 @@
-let carte = document.querySelector('.carte');
+let modeleCarte = document.querySelector('.carte');
 let containeurDesCartes = document.querySelector('.mes-cartes')
 let button =  document.querySelector('.test-button')
 let buttonAjouter = document.querySelector('.addBtn')
@@ -46,14 +46,43 @@ function recupererLesChamps(){
 formulaireDeTache.addEventListener('submit', (evenement)=>{
     evenement.preventDefault()
     // console.log(recupererLesChamps())
+    let nouvelleCarte =  creerCarte(recupererLesChamps());
+
+    containeurDesCartes.appendChild(nouvelleCarte);
+
     buttonFermetureFormulaire.click();
 })
 
-/* retourne true si les champs requis sont saisi*/
+/* retourne true si les champs requis sont correcte et false sinon*/
 function verifierLesChamps(saisi){
     return (
         saisi.title.length >= 3 &&
         saisi.description >= 3 &&
         deadline != null
     )
+}
+
+function creerCarte(tache){
+    let carte = modeleCarte.cloneNode(true);
+    document.querySelector('.carte').style.display = 'block';
+    document.querySelector('.carte').setAttribute('id', tache.id);
+    document.querySelector('.mon-titre h3').innerText = tache.title;
+    document.querySelector('time').innerText = tache.deadline;
+    document.querySelector('.mon-titre span').innerHTML = tache.state;
+    document.querySelector('textarea').innerHTML = tache.description;
+    switch (tache.priority) {
+        case "faible":
+            document.querySelector('.etiquette').style.backgroundColor = "green";
+            break;
+        case "forte":
+            document.querySelector('.etiquette').style.backgroundColor = "red";
+            break;
+        case "moyenne":
+            document.querySelector('.etiquette').style.backgroundColor = "yellow";
+            break;
+        default:
+            document.querySelector('.etiquette').style.backgroundColor = "red";
+            break;
+    }
+    return carte;
 }
