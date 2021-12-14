@@ -36,8 +36,6 @@ function modifierTache(id){
     let nouvelleModification = recupererLesChamps();
 
     // tu modifier dans la page
-
-
     modifierDansDatabase(id, nouvelleModification);
 }
 
@@ -109,7 +107,6 @@ function creerCarte(tache){
     }
     return carte;
 }
-
 
 function ajouterDansDatabase(tache){
     fetch(`${url}?apikey=${apiKey}`, {
