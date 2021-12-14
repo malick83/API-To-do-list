@@ -40,7 +40,16 @@ function supprimerTache(id){
 function modifierTache(id){}
 
 //kebe
-function afficherLesTaches(){}
+function afficherLesTaches(){
+    fetch(`${url}?apikey=${apiKey}`)
+    .then( data => data.json())
+    .then( listeDesTaches => {
+        for (const tache of listeDesTaches) {
+            creerCarte(tache);
+        }
+    })
+}
+afficherLesTaches()
 
 /* recupere les champs saisi par l'utilisateur*/
 function recupererLesChamps(){
