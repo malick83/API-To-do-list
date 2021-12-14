@@ -15,10 +15,14 @@ let taskModel = {
     ended:true
 }
 
+//ramata 
 function ajouterTache(){}
 
+//rokhaya
 function supprimerTache(){}
 
+// abdou karim
 function modifierTache(){}
 
+//kebe
 function afficherLesTaches(){}
