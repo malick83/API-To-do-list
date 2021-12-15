@@ -1,11 +1,9 @@
 let modeleCarte = document.querySelector('.carte');
 let btnOpenModel = document.querySelector('.btn-open-modal')
 let containeurDesCartes = document.querySelector('.mes-cartes')
-let button =  document.querySelector('.test-button')
+// let button =  document.querySelector('.test-button')
 let buttonAjouter = document.querySelector('.addBtn')
-let tousLesButtonSupprimer;
 let tousLesCartes;
-let tousLesButtonTerminer;
 let formulaireDeTache = document.querySelector('.form-task')
 let buttonFermetureFormulaire = document.querySelector('.btn-close')
 let apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjM4OTc5MDUxLCJleHAiOjE5NTQ1NTUwNTF9.9zUm7vEolQ-I2qKcxN3NIz2I-o2iAiSoAZzwdy8fO5g"
@@ -16,11 +14,8 @@ afficherLesTaches();
 function ajouterTache(){
 
     let saisi = recupererLesChamps();
-
-    let nouvelleCarte =  creerCarte(saisi);
-
+    let nouvelleCarte = creerCarte(saisi);
     containeurDesCartes.appendChild(nouvelleCarte);
-
     ajouterDansDatabase(saisi)
 }
 
@@ -31,13 +26,13 @@ function supprimerTache(carte){
     supprimerDansDatabase(id);
 }
 
-function modifierTache(carte, modification){
-    let id = carte.getAttribute('data-id');
-    document.querySelector('.btn-add-task').lastElementChild.click();
-    // let ancienTache = recupererLesChamps();
-    // tu modifier dans la page
-    // modifierDansDatabase(id, modification);
-}
+// function modifierTache(carte, modification){
+//     let id = carte.getAttribute('data-id');
+//     document.querySelector('.btn-add-task').lastElementChild.click();
+//     // let ancienTache = recupererLesChamps();
+//     // tu modifier dans la page
+//     // modifierDansDatabase(id, modification);
+// }
 
 async function afficherLesTaches(){
     fetch(`${url}?apikey=${apiKey}`)
@@ -49,7 +44,7 @@ async function afficherLesTaches(){
         }
     })
     // ajouter les evens sur les buttons
-    .then( ()=>{
+    .then( () => {
         tousLesCartes = document.querySelectorAll('.carte');
 
         for (const carte of tousLesCartes) {
@@ -64,10 +59,6 @@ async function afficherLesTaches(){
                 e.target.classList.toggle("ended");
                 let ended = e.target.classList.contains("ended");
                 modifierDansDatabase(carte.getAttribute('data-id'), {ended});
-            })
-            button.addEventListener('click', (e)=>{
-                e.stopPropagation();
-                modifierTache(carte, {title:"fkkf"});
             })
         }
     })
@@ -87,9 +78,8 @@ function recupererLesChamps(){
 }
 
 formulaireDeTache.addEventListener('submit', (evenement)=>{
-    evenement.preventDefault()
-    // console.log(recupererLesChamps())
-    ajouterTache()
+    evenement.preventDefault();
+    ajouterTache();
     buttonFermetureFormulaire.click();
 })
 
@@ -98,10 +88,13 @@ function creerCarte(tache){
     let carte = modeleCarte.cloneNode(true);
     document.querySelector('.carte').style.display = 'block';
     document.querySelector('.carte').setAttribute('data-id', tache.id);
+    //document.querySelector('.terminer').setAttribute('data-state', tache.ended);
     document.querySelector('.mon-titre h3').innerText = tache.title;
     document.querySelector('time').innerText = tache.deadline;
     document.querySelector('.mon-titre span').innerHTML = tache.state;
     document.querySelector('.description').innerHTML = tache.description;
+    // let terminer = document.querySelector('.terminer');
+
     switch (tache.priority) {
         case "faible":
             document.querySelector('.etiquette').style.backgroundColor = "green";
@@ -115,6 +108,13 @@ function creerCarte(tache){
         default:
             document.querySelector('.etiquette').style.backgroundColor = "red";
             break;
+    }
+    if(tache.ended == true){
+        document.querySelector('.bouton-terminer span').setAttribute('class', 'ended');
+        console.log(true);
+    }else{
+        document.querySelector('.bouton-terminer span').removeAttribute('class', 'ended');
+        console.log(false);
     }
     return carte;
 }
